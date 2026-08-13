@@ -1,54 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyLinks - Tu Nombre</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Alonso Paz Ruiz · MyLinks</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <main class="card">
+  <main class="page">
+    <div class="card">
 
-        <!-- FOTO DE PERFIL -->
-        <!-- Cambia "Tu Nombre" en el atributo alt -->
-        <img class="avatar" src="fototot.jpeg" alt="Foto de Alonso Paz" width="100"
-            height="100" />
+      <!-- Cabecera de perfil -->
+      <header class="profile">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="3.4"/>
+            <path d="M5.5 19.5c1.2-3.4 3.9-5 6.5-5s5.3 1.6 6.5 5"/>
+          </svg>
+        </div>
+        <h1>Angel Alonso Paz Ruiz</h1>
+        <p>Apasionado de la Inteligencia Artificial y profesor en Enter Tech School</p>
+      </header>
 
-        <!-- NOMBRE Y BIO -->
-        <!-- Reemplaza el texto con tu información -->
-        <h1 class="name">Alonso Paz</h1>
-        <p class="bio">Entusiasta de la Inteligencia Artificial y Profesor en Enter Tech School</p>
+      <div class="divider"></div>
 
+      <!-- Enlaces principales -->
+      <nav class="links" aria-label="Enlaces principales">
+        <a class="link-btn" href="https://www.enter.edu.pe/" target="_blank" rel="noopener noreferrer">
+          <span class="left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4 2 9l10 5 10-5-10-5Z"/>
+              <path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/>
+              <path d="M22 9v6"/>
+            </svg>
+            <span>Enter-Tech School</span>
+          </span>
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
 
-        <!-- ENLACES -->
-        <!-- Cambia el href y el texto de cada enlace -->
-        <!-- Puedes agregar o quitar enlaces según necesites como FACEBOOK,WHATTSAP,etc cualquier medio de contacto -->
-        <nav class="links">
+        <a class="link-btn" href="https://github.com/alonsodev17" target="_blank" rel="noopener noreferrer">
+          <span class="left">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.5 0 12.26c0 5.42 3.44 10.02 8.21 11.64.6.11.83-.27.83-.6 0-.29-.01-1.06-.02-2.08-3.34.74-4.04-1.64-4.04-1.64-.55-1.42-1.34-1.8-1.34-1.8-1.09-.76.08-.74.08-.74 1.21.09 1.84 1.26 1.84 1.26 1.07 1.87 2.81 1.33 3.5 1.02.11-.79.42-1.33.76-1.64-2.67-.31-5.47-1.37-5.47-6.1 0-1.35.47-2.45 1.24-3.31-.12-.31-.54-1.57.12-3.28 0 0 1.01-.33 3.3 1.27a11.3 11.3 0 0 1 6 0c2.29-1.6 3.3-1.27 3.3-1.27.66 1.71.24 2.97.12 3.28.77.86 1.24 1.96 1.24 3.31 0 4.74-2.8 5.79-5.48 6.09.43.38.81 1.14.81 2.31 0 1.66-.02 3-.02 3.41 0 .33.22.72.83.6C20.56 22.28 24 17.68 24 12.26 24 5.5 18.63 0 12 0Z"/>
+            </svg>
+            <span>GitHub</span>
+          </span>
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
 
-            <a href="https://github.com/alonsodev17" class="link" target="_blank">
-                GitHub
-            </a>
+        <a class="link-btn" href="https://uventio.com/" target="_blank" rel="noopener noreferrer">
+          <span class="left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="8" width="18" height="11" rx="2"/>
+              <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              <path d="M3 13h18"/>
+            </svg>
+            <span>Portfolio</span>
+          </span>
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
 
-            <a href="mailto:tu@email.com" class="link">
-                Email
-            </a>
-
-
-
-        </nav>
-
-    </main>
+    <!-- Redes sociales -->
+    <nav class="socials" aria-label="Redes sociales">
+      <a class="social-btn" href="https://www.linkedin.com/in/angel-alonso-paz-ruiz-038779267/?skipRedirect=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+        </svg>
+      </a>
+      <a class="social-btn" href="https://www.facebook.com/angelito.paz.7" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13.5 21v-8.1h2.7l.4-3.1h-3.1V7.8c0-.9.25-1.5 1.55-1.5H16.7V3.5c-.26-.04-1.16-.11-2.2-.11-2.2 0-3.7 1.34-3.7 3.8v2.6H8.1v3.1h2.7V21h2.7Z"/>
+        </svg>
+      </a>
+      <a class="social-btn" href="https://www.instagram.com/alonso.dev17?igsh=MWNnd2x0NDk0cGhoaQ%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </nav>
+  </main>
 
 </body>
-
 </html>

@@ -1,91 +1,253 @@
-/* =============================================
-   MYLINKS - ESTILOS BASE
-   En las próximas clases construirás encima
-   de estos estilos para mejorar el diseño.
-   ============================================= */
-
-/* --- ESTILOS GLOBALES --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #0f0f13;
-  color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* --- TARJETA PRINCIPAL --- */
-.card {
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-/* --- FOTO DE PERFIL --- */
-.avatar {
-  border-radius: 50%;
-}
-
-/* --- NOMBRE --- */
-.name {
-  font-size: 1rem;
-  margin-top: 16px;
-}
-
-/* --- BIO --- */
-.bio {
-  font-size: 0.8rem;
-  color: #a0a0b0;
-  margin-top: 8px;
-}
-
-/* --- CONTENEDOR DE ENLACES --- */
-.links {
-  margin-top: 24px;
-}
-
-/* --- CADA ENLACE --- */
-.link {
-  display: block;
-  padding: 0.8rem;
-  margin-top: 12px;
-  border: 1px solid #2a2a38;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.8rem;
-}
-
-
-
-
-
-@media (min-width: 768px) {
-  .name{
-  font-size: 2rem;
+  :root{
+    --bg: #ffffff;
+    --accent: #2bb59c;
+    --accent-soft: rgba(43,181,156,0.09);
+    --accent-line: rgba(43,181,156,0.6);
+    --text: #575142;
+    --text-soft: #8a8474;
+    --divider: #F6F6F6;
   }
-  .bio{
-    font-size: 1rem;
-  }
-  .link{
-    font-size: 1rem;
-    padding: 1rem;
-  }
-  .link:hover{
-background-color: #2a2a38;
-}
-}
 
+  *{ margin:0; padding:0; box-sizing:border-box; }
 
-@media (min-width: 2400px){
-  .name{
-    font-size: 4rem;
+  html, body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
-}
+
+  body{
+    min-height: 100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 32px 18px 48px;
+  }
+
+  a{ text-decoration:none; color:inherit; }
+
+  svg{ display:block; }
+
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  .page{
+    width: 100%;
+    max-width: 420px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* ---------- Card ---------- */
+  .card{
+    width:100%;
+    background: var(--bg);
+    border: 1px solid var(--divider);
+    border-radius: 32px;
+    overflow:hidden;
+  }
+
+  /* ---------- Header / Perfil ---------- */
+  .profile{
+    padding: 40px 32px 28px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  /* Placeholder de foto: cuadrado perfecto, fijo, sin animaciones ni hover */
+  .avatar{
+    width: 108px;
+    height: 108px;
+    flex-shrink: 0;
+    background: var(--accent-soft);
+    border: 1.5px solid var(--accent-line);
+    border-radius: 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+
+  .avatar svg{ width: 44px; height: 44px; }
+
+  .profile h1{
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .profile p{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-soft);
+    max-width: 300px;
+  }
+
+  /* ---------- Divisor ---------- */
+  .divider{
+    height: 4px;
+    background: var(--divider);
+    margin: 0 32px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Links principales ---------- */
+  .links{
+    padding: 28px 24px 32px;
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+  }
+
+  /* Botón adaptado del estilo Uiverse (mobinkakei): wiggle + barrido de brillo,
+     recoloreado a la paleta del sitio, sin box-shadow. */
+  .link-btn{
+    position: relative;
+    margin: 0;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    width:100%;
+    padding: 15px 20px;
+    outline: none;
+    cursor: pointer;
+    background: var(--bg);
+    border: 1px solid var(--accent-line);
+    border-radius: 16px;
+    color: var(--text);
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+
+  .link-btn:hover,
+  .link-btn:focus-visible{
+    animation: linkWiggle 0.7s ease-in-out both;
+  }
+
+  .link-btn .left{
+    position: relative;
+    z-index: 1;
+    display:flex;
+    align-items:center;
+    gap: 13px;
+  }
+
+  .link-btn:hover .left,
+  .link-btn:focus-visible .left{
+    animation: linkShift 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+  }
+
+  .link-btn .left svg{
+    width: 19px;
+    height: 19px;
+    color: var(--accent);
+    flex-shrink:0;
+  }
+
+  .link-btn span{
+    font-size: 14.5px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    color: var(--text);
+  }
+
+  .link-btn .caret{
+    position: relative;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    color: var(--accent);
+    flex-shrink:0;
+  }
+
+  /* barrido de brillo diagonal, color acento a baja opacidad */
+  .link-btn::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60px;
+    width: 36px;
+    height: 200%;
+    background: var(--accent);
+    opacity: 0.16;
+    transform: rotate(22deg);
+    z-index: -1;
+    transition: left 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .link-btn:hover::after,
+  .link-btn:focus-visible::after{
+    left: 120%;
+  }
+
+  @keyframes linkWiggle{
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(1.4deg); }
+    50%  { transform: rotate(-1.4deg); }
+    75%  { transform: rotate(0.5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  @keyframes linkShift{
+    0%   { transform: translate3d(0,0,0); }
+    25%  { transform: translate3d(2px,0,0); }
+    50%  { transform: translate3d(-1.5px,0,0); }
+    75%  { transform: translate3d(1px,0,0); }
+    100% { transform: translate3d(0,0,0); }
+  }
+
+  /* ---------- Redes sociales ---------- */
+  .socials{
+    display:flex;
+    justify-content:center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .social-btn{
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: #ffffff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .social-btn svg{ width: 22px; height: 22px; }
+
+  .social-btn:hover,
+  .social-btn:focus-visible{
+    transform: translateY(-3px);
+    opacity: 0.88;
+  }
+
+  /* ---------- Desktop ---------- */
+  @media (min-width: 600px){
+    body{ padding: 48px 24px; }
+    .card{ border-color: var(--divider); }
+    .profile{ padding-top: 48px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .link-btn, .link-btn .left, .link-btn::after, .social-btn{
+      transition: none;
+      animation: none !important;
+    }
+  }
